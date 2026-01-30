@@ -35,17 +35,12 @@ async function main() {
   loadEnvFile(path.join(process.cwd(), ".env"));
 
   if (!process.env.DATABASE_URL) {
-    console.error(
-      "DATABASE_URL is not set. Add it to .env.local or export it, then try again.",
-    );
+    console.error("DATABASE_URL is not set. Add it to .env.local or export it, then try again.");
     process.exitCode = 1;
     return;
   }
 
-  const migrationsFolder = path.join(
-    path.dirname(fileURLToPath(import.meta.url)),
-    "migrations",
-  );
+  const migrationsFolder = path.join(path.dirname(fileURLToPath(import.meta.url)), "migrations");
 
   const { db, pool } = await import("./index");
 
@@ -67,4 +62,3 @@ async function main() {
 }
 
 void main();
-
