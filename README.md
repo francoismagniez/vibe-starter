@@ -21,7 +21,7 @@ bun install
 cp .env.example .env.local
 ```
 
-Edit `.env.local` (it is **git-ignored**) and set `DATABASE_URL`:
+Edit `.env.local` with your `DATABASE_URL` (it is **git-ignored**):
 
 ```bash
 # Fedora (Unix socket)
